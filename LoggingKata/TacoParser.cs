@@ -6,6 +6,7 @@ namespace LoggingKata
     /// Parses a POI file to locate all the Taco Bells
     /// </summary>
     public class TacoParser
+
 {
     readonly ILog logger = new TacoLogger();
     public ITrackable Parse(string line)
@@ -14,7 +15,7 @@ namespace LoggingKata
         // Do not fail if one record parsing fails, return null
         //return null; // TODO Implement
 
-                     // Take your line and use line.Split(',') to split it up into an array of strings, separated by the char ','
+            // Take your line and use line.Split(',') to split it up into an array of strings, separated by the char ','
         var cells = line.Split(',');
 
         // If your array.Length is less than 3, something went wrong

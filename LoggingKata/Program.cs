@@ -8,6 +8,16 @@ namespace LoggingKata
     {
         static readonly ILog logger = new TacoLogger();
         const string csvPath = "TacoBell-US-AL.csv";
+
+        public bool ShouldTellIfNumbersAreTheSameSomething(int num1, int num2)
+        {
+            if (num1 == num2)
+            {
+                return true;
+            }
+            else return false;
+        }
+
         static void Main(string[] args)
         {
             logger.LogInfo("Log initialized");
@@ -29,11 +39,9 @@ namespace LoggingKata
             // Create two `ITrackable` variables with initial values of `null`. These will be used to store your two taco bells that are the furthest from each other.
             ITrackable locA = null;
             ITrackable locB = null;
-            
-            //ITrackable point1 = null;
-            //ITrackable point2 = null;
 
-            //GeoCoordinate cordA = new GeoCoordinate();
+
+
 
 
             double distanceVs = 0;
@@ -66,52 +74,8 @@ namespace LoggingKata
 
 
 
-            //    // Location 1
-            //cordA.Latitude = locA.Location.Latitude;
-            //cordA.Longitude = locA.Location.Longitude;
-
-            ////Location 2
-            //cordB.Latitude = locB.Location.Latitude;
-            //cordB.Longitude = locB.Location.Longitude;
-
-            ////First TacoBell
-            //TacoBell NewtacoBell1 = new TacoBell();
-            //var currLocation = NewtacoBell1.Location;
-            //currLocation.Latitude = locA.Location.Latitude;
-            //currLocation.Longitude = locA.Location.Longitude;
-            //NewtacoBell1.Name = locA.Name;
-
-            ////Second TacoBell
-            //TacoBell NewtacoBell2 = new TacoBell();
-            //var currLocation2 = NewtacoBell1.Location;
-            //currLocation.Latitude = locA.Location.Latitude;
-            //currLocation.Longitude = locA.Location.Longitude;
-            //NewtacoBell1.Name = locA.Name;
-
-            //foreach (item in locations)
-            //{
-            //    Console.WriteLine();
-
-            //}
 
 
-            // Create a `double` variable to store the distance
-
-
-            //var double DistanceBetween = 0;?
-
-
-
-            //foreach (item in DistanceBetween)
-
-            // Include the Geolocation toolbox, so you can compare locations: `using GeoCoordinatePortable;`
-            // Do a loop for your locations to grab each location as the origin (perhaps: `locA`)
-            // Create a new corA Coordinate with your locA's lat and long
-            // Now, do another loop on the locations with the scope of your first loop, so you can grab the "destination" location (perhaps: `locB`)
-            // Create a new Coordinate with your locB's lat and long
-            // Now, compare the two using `.GetDistanceTo()`, which returns a double
-            // If the distance is greater than the currently saved distance, update the distance and the two `ITrackable` variables you set above
-            // Once you've looped through everything, you've found the two Taco Bells furthest away from each other.
         }
     }
 
