@@ -9,15 +9,6 @@ namespace LoggingKata
         static readonly ILog logger = new TacoLogger();
         const string csvPath = "TacoBell-US-AL.csv";
 
-        public bool ShouldTellIfNumbersAreTheSameSomething(int num1, int num2)
-        {
-            if (num1 == num2)
-            {
-                return true;
-            }
-            else return false;
-        }
-
         static void Main(string[] args)
         {
             logger.LogInfo("Log initialized");
@@ -37,15 +28,14 @@ namespace LoggingKata
             //DONE THE ABOVE//
             // Now, here's the new code
             // Create two `ITrackable` variables with initial values of `null`. These will be used to store your two taco bells that are the furthest from each other.
+
             ITrackable locA = null;
             ITrackable locB = null;
 
 
-
-
-
             double distanceVs = 0;
             double maxDistance = 0;
+
             for (int i=0; i< locations.Length; i++)
             {
                 var corA = new GeoCoordinate(locations[i].Location.Latitude, locations[i].Location.Longitude);
@@ -71,10 +61,6 @@ namespace LoggingKata
             }
             Console.WriteLine($"{locA.Name} {locB.Name}");
             Console.ReadLine();
-
-
-
-
 
         }
     }
